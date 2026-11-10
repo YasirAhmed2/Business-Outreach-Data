@@ -1,0 +1,104 @@
+# Pakistan Autonomous Business & Executive Intelligence System
+# Configuration File
+
+system:
+  name: "Pakistan Autonomous Business & Executive Intelligence System"
+  version: "1.0.0"
+  country: "Pakistan"
+  country_code: "PK"
+  timezone: "Asia/Karachi"
+
+targets:
+  total_companies_target: 1000
+  batch_size: 50
+  default_test_target: 20
+
+processing:
+  request_timeout_seconds: 15
+  retry_limit: 3
+  backoff_factor: 1.5
+  max_pages_per_company: 5
+  max_concurrent_workers: 4
+  refresh_interval_days: 30
+  max_processing_time_minutes: 240
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 (Pakistan-Business-Research-Bot/1.0; legitimate-research-only)"
+  respect_robots_txt: true
+
+sources:
+  permitted:
+    - name: "SECP"
+      type: "official_institutional"
+      enabled: true
+      tier: 1
+    - name: "PSEB"
+      type: "official_institutional"
+      enabled: true
+      tier: 1
+    - name: "PASHA"
+      type: "industry_association"
+      enabled: true
+      tier: 1
+    - name: "PSX"
+      type: "stock_exchange"
+      enabled: true
+      tier: 1
+    - name: "Ignite_NIC"
+      type: "official_incubator"
+      enabled: true
+      tier: 1
+    - name: "University_Incubators"
+      type: "academic_incubator"
+      enabled: true
+      tier: 1
+    - name: "Chambers_Of_Commerce"
+      type: "chamber_directory"
+      enabled: true
+      tier: 2
+    - name: "Rozee_Ecosystem"
+      type: "business_ecosystem"
+      enabled: true
+      tier: 2
+    - name: "Enterprise_Websites"
+      type: "company_direct"
+      enabled: true
+      tier: 2
+
+geographic_focus:
+  priority_cities:
+    - "Karachi"
+    - "Lahore"
+    - "Islamabad"
+    - "Rawalpindi"
+    - "Faisalabad"
+    - "Peshawar"
+    - "Haripur"
+    - "Abbottabad"
+    - "Sialkot"
+    - "Gujranwala"
+    - "Multan"
+    - "Hyderabad"
+    - "Quetta"
+    - "Sargodha"
+    - "Bahawalpur"
+    - "Sukkur"
+  provinces:
+    - "Sindh"
+    - "Punjab"
+    - "Islamabad Capital Territory"
+    - "Khyber Pakhtunkhwa"
+    - "Balochistan"
+    - "Gilgit-Baltistan"
+    - "Azad Jammu & Kashmir"
+
+verification:
+  mx_lookup_timeout_seconds: 5
+  strict_pakistan_phone_check: true
+  min_authenticity_score_for_confirmed: 70
+  allow_category_b_inclusion: true
+
+paths:
+  database: "database/pakistan_business_intelligence.db"
+  excel_output: "output/Pakistan_Business_Intelligence.xlsx"
+  checkpoints_dir: "output/checkpoints"
+  logs_dir: "logs"
+  data_dir: "data"

@@ -1,0 +1,13 @@
+{
+  "job_id": "JOB-1794275623",
+  "batch_number": 2,
+  "batch_start_index": 20,
+  "batch_end_index": 70,
+  "companies_processed": 50,
+  "confirmed_added": 50,
+  "duplicates_skipped": 0,
+  "failed_count": 0,
+  "checkpoint_excel_path": "output/checkpoints/checkpoint_batch_02.xlsx",
+  "processed_at": "2026-11-10T02:04:13.114060+00:00",
+  "notes": "Batch 2 completed successfully"
+}
